@@ -1,12 +1,23 @@
-# React + Vite
+# React + Vite サンプル
+Viteを用いてReactの必要最低限の構成を作成した  
+またDocker上で動作させるための設定も行った  
+TypeScriptは採用していない
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 経緯
+Reactアプリケーションを作るにあたって、create-react-appが公式に非推奨であるため、Viteを用いることとした  
+他にもcompose.yamlを用いるなど最新の推奨設定とすることを心がけた
 
-Currently, two official plugins are available:
+## 作成した手順
+```
+npm create vite@latest react_vite_sample
+cd react_vite_sample
+npm install
+```
+npm create viteにおける選択は  
+React -> JavaScript + SWC
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 起動方法
+```
+docker compose up --build
+```
+http://localhost:5173 にアクセス
